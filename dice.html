@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        div{
+           /* border:7px solid violet;*/
+            padding:270px;
+            text-align:center;
+        }
+
+        img{
+            cursor:grab;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="1.png" id="a"/>
+    </div>
+
+    <script>
+        let a = document.querySelector('#a');
+
+        function randomDiceFace(){
+            let random = Math.random();
+            let range6 = random * 6;
+            let range6Trunc = Math.trunc(range6);
+
+            let finalNumber = range6Trunc + 1;
+
+            a.src = finalNumber + '.png';
+
+        }
+        function rollDice(){
+            a.src = 'roll.gif';
+
+            setTimeout(randomDiceFace, 2000);
+        }
+
+        a.onclick = rollDice;
+    </script>
+    
+</body>
+</html>
